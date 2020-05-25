@@ -1,0 +1,11 @@
+<div *ngFor="let item of shoppingcart">
+    <div>
+        <div><strong>{{ item.product.name }}</strong></div>
+        <img class="imgSizeSmall" [src]="item.product.image" alt="Product Image"/>
+        <div class="text-muted">{{ item.quantity }} x {{ item.product.price }} :-</div>
+    </div>
+    <div>
+        <button class="btn btn-sm white-text btn-dark" (click)="increment(item);$event.stopPropagation()">+</button>
+        <button class="btn btn-sm white-text btn-dark" (click)="decrement(item);$event.stopPropagation()">-</button>
+    </div>
+</div>

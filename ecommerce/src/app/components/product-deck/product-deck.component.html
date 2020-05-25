@@ -1,0 +1,17 @@
+<div class="m-5 row row-cols-1 row-cols-md-4">
+    <div *ngFor="let product of productcatalog | async">
+        <div class="card mb-3 align-items-center">
+            <div class="view overlay">
+                <img class="card-img-top imgSize mt-2" [src]="product.image" alt="Product image">
+                <a [routerLink]="'/products/' + product._id"><div class="mask rgba-white-slight"></div></a>
+            </div>
+
+            <div class="card-body text-center">
+                <h4 class="card-title">{{ product.name }}</h4>
+                <p class="card-text">{{ product.short }}</p>
+                <p>{{ product.price }} SEK</p>
+                <a [routerLink]="'/products/' + product._id"><button class="btn btn-dark btn-lg" type="button">Read more</button></a>
+            </div>
+        </div>
+    </div>
+</div>
