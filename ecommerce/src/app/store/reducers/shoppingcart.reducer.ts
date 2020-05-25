@@ -6,7 +6,6 @@ const initialState: Array<IShoppingcart> = []
 
 export function ShoppingcartReducer(state = initialState, action: Actions) {
 
-    let itemIndex
     
     switch(action.type) {
         case ActionTypes.SHOPPINGCART_ADD :

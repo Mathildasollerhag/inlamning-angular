@@ -4,24 +4,25 @@
         <h4 class="m-3">Shopping Cart</h4>
 
         <app-cart-item></app-cart-item>
-       
+
     </div>
 
-    
-        <div>
+    <div *ngIf="shoppingcart.length > 0">
 
         <div>
-           <button class="btn btn-danger" (click)="clearCart();$event.stopPropagation()"><i class="far fa-trash-alt"></i></button>
-       </div>
+            <button class="btn btn-danger" (click)="clearCart();$event.stopPropagation()"><i
+                    class="far fa-trash-alt"></i></button>
+        </div>
 
-           <p>Total Amount: total amount :-</p>
-           <p>Total Quantity: total quantity</p>
+        <p>Total Amount: total amount :-</p>
+        <p>Total Quantity: total quantity</p>
 
-       </div>
-      
-        <div class="mb-3">Din kundvagn är tom</div>
-       
-       <button class="btn btn-light">CHECKOUT</button>
-    
-    
-</div>
+    </div>
+
+    <div>
+
+        <div *ngIf="shoppingcart.length <= 0" class="mb-3">Din kundvagn är tom</div>
+
+        <button class="btn btn-light">CHECKOUT</button>
+
+    </div>

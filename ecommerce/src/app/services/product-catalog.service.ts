@@ -23,7 +23,3 @@ export class ProductCatalogService {
   }
  
 }
-
-
-// API-HÄMTNINGAR HÄÄÄÄÄR!!! Måste importera axios, ska inte in i constructorn. Skriv som vanligt. Vanligare med httpclient i Angular. 
-// ACTIONS FÖR STORE HÄÄÄÄÄÄR!!!
