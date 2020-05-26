@@ -20,6 +20,8 @@ import { ProductReducer } from './store/reducers/product.reducer';
 import { ShoppingcartReducer } from './store/reducers/shoppingcart.reducer';
 import { CartItemComponent } from './components/shoppingcart/cart-item/cart-item.component';
 import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart/shoppingcart.component';
+import { ShoppingCartReducerQuantity } from './store/reducers/shoppingcart-quantity-reducer';
+import { ShoppingCartReducerAmount } from './store/reducers/shoppingcart-amount-reducer';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { ShoppingcartComponent } from './components/shoppingcart/shoppingcart/sh
     StoreModule.forRoot({
       productcatalog: ProductCatalogReducer,
       product: ProductReducer,
-      shoppingcart: ShoppingcartReducer
+      shoppingcart: ShoppingcartReducer,
+      shoppingcartQuantity: ShoppingCartReducerQuantity,
+      shoppingcartAmount: ShoppingCartReducerAmount
     }, {}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],

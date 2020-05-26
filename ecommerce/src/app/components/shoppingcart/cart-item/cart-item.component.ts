@@ -21,10 +21,6 @@ export class CartItemComponent implements OnInit {
     this.store.select(state => state.shoppingcart).subscribe(res => this.shoppingcart = res)
   }
 
-  removeFromCart(id) {
-    this.shoppingCartService.remove(id)
-  }
-
   increment(item) {
     this.shoppingCartService.increment(item)
   }

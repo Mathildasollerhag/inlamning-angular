@@ -27,7 +27,6 @@ export function ShoppingcartReducer(state = initialState, action: Actions) {
                 return newItem
             })
 
-
         case ActionTypes.SHOPPINGCART_DECREMENT : 
             let _indexx = state.findIndex(p => {return p.product._id === action.payload.product._id})
             return state.map((item, index) => {
@@ -41,24 +40,6 @@ export function ShoppingcartReducer(state = initialState, action: Actions) {
         default: 
             return state
     }
+
 }
 
-// const getTotalQuantity = (items) => {
-//     let totalQuantity = 0
-
-//     items.forEach(product => {
-//         totalQuantity += product.quantity
-//     });
-
-//     return totalQuantity
-// }
-
-// const getTotalAmount = (items) => {
-//     let totalAmount = 0
-
-//     items.forEach(product => {
-//         totalAmount += product.price * product.quantity
-//     });
-
-//     return totalAmount
-// }

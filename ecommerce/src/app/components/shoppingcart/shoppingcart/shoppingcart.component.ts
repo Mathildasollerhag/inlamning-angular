@@ -16,6 +16,8 @@ export class ShoppingcartComponent implements OnInit {
 
   public product: IProduct
   public shoppingcart: Array<IShoppingcart>
+  public shoppingcartQuantity: number = 0
+  public shoppingcartAmount: number = 0
 
   constructor(private shoppingCartService: ShoppingCartService, private productService: ProductService, private router: ActivatedRoute,  private store: Store<IState>) { }
 
@@ -23,6 +25,8 @@ export class ShoppingcartComponent implements OnInit {
     this.productService.clear()
     this.productService.getById(this.router.snapshot.params.id)
     this.store.select(state => state.shoppingcart).subscribe(res => this.shoppingcart = res)
+    this.store.select(state => state.shoppingcartQuantity).subscribe(res => this.shoppingcartQuantity = res)
+    this.store.select(state => state.shoppingcartAmount).subscribe(res => this.shoppingcartAmount = res)
   }
 
   clearCart() {
